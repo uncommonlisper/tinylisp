@@ -1,12 +1,12 @@
 INCS = -I/usr/local/include
-LIBS = -L/usr/local/lib
+LIBS = -L/usr/local/lib -lreadline -lm
 
-CFLAGS = -ggdb -O0 -pedantic-errors -Wall -Wextra -Werror -ansi
+CFLAGS = -ggdb -O0 -pedantic-errors -Wall -Wextra -Werror -ansi $(INCS)
 LDFLAGS = ${LIBS}
 
 CC = cc
 
-SRC = main.c
+SRC = main.c mpc.c
 OBJ = $(SRC:.c=.o)
 
 all: tinylisp
